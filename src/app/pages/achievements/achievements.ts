@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./achievements.css']
 })
 export class AchievementsPage {
-  stats = [
+  stats = [ 
     { value: '500+', label: 'Cases Resolved' },
     { value: '12K+', label: 'People Helped' },
     { value: '64', label: 'Districts Reached' },
