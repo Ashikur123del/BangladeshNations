@@ -1,0 +1,48 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-blue-950 to-blue-800/50"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">Our Network</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Members <span class="text-blue-400">Across BD</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">NHCRF has an active network of human rights reporters, advocates and legal professionals spanning all 64 districts of Bangladesh.</p>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="bg-blue-900 py-16">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      @for (s of stats; track s.label) {
+        <div>
+          <div class="text-4xl md:text-5xl font-black text-blue-300 mb-2">{{ s.value }}</div>
+          <div class="text-blue-200/70 text-sm uppercase tracking-widest">{{ s.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Division Map -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black text-slate-900 mb-4">Members by Division</h2>
+      <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      @for (div of divisions; track div.name) {
+        <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer">
+          <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-900 transition-colors">
+            <i class="fa-solid fa-map-location-dot text-blue-700 group-hover:text-white transition-colors"></i>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-1">{{ div.name }}</h3>
+          <p class="text-sm text-slate-500 mb-3">{{ div.districts }} Districts</p>
+          <div class="w-full bg-slate-200 rounded-full h-1.5 mb-2">
+            <div class="bg-blue-600 h-1.5 rounded-full" [style.width]="div.pct"></div>
+          </div>
+          <p class="text-blue-700 font-black text-sm">{{ div.members }} Members</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

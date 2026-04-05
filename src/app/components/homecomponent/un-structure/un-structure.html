@@ -1,0 +1,46 @@
+<section class="bg-[#f8fafc] py-24 font-sans">
+  <div class="container mx-auto px-6 lg:px-24">
+    
+    <div class="text-center max-w-3xl mx-auto mb-24">
+      <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+        Structure of the <br>
+United Nations
+        <div class="flex justify-center mt-3">
+          <div class="h-1.5 w-20 bg-[#009edb] rounded-full"></div>
+        </div>
+      </h2>
+      <p class="text-slate-500 font-medium">
+      The main parts of the UN structure are the General Assembly, the
+Security Council, the Economic and Social Council, the Trusteeship Council, the International Court of Justice, and the UN Secretariat. All were established in 1945 when the UN was founded.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      @for (organ of unOrgans(); track organ.id) {
+        <div class="group relative bg-white border border-slate-100 p-10 rounded-[32px] f transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,158,219,0.15)] hover:-translate-y-2">
+          
+          <div class="relative w-20 h-20 mx-auto mb-8">
+            <div class="absolute inset-0 bg-blue-50 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+            <img [src]="organ.img" class="relative w-full h-full object-contain p-2" [alt]="organ.name">
+          </div>
+
+          <h3 class="text-xl font-black text-center text-slate-900 mb-4 group-hover:text-[#009edb] transition-colors">
+            {{ organ.name }}
+          </h3>
+          <p class="text-slate-500 text-center text-[13px] leading-relaxed line-clamp-3">
+            {{ organ.desc }}
+          </p>
+        </div>
+      }
+
+    </div>
+
+    <div class="mt-20 text-center">
+      <button class="bg-linear-to-r from-blue-800 to-blue-600 text-white font-bold px-10 py-4 rounded-2xl text-[14px] tracking-widest transition-all duration-300">
+        Explore Full Structure
+      </button>
+    </div>
+
+  </div>
+</section>

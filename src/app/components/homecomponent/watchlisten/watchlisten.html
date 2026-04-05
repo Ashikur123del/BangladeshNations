@@ -1,0 +1,123 @@
+<div class="bg-[#F8FAFC] py-20 px-6 font-sans antialiased text-gray-900">
+  <div class="max-w-[1400px] mx-auto">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight text-[#001D4A]">
+        Watch and Listen
+      </h2>
+      <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
+      <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        Discover powerful stories through video and audio from across the United Nations and our global network of agencies.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      
+      <div class="lg:col-span-8">
+        
+        <div class="group mb-16">
+          <div (click)="openVideo(mainVideo.id)" 
+               class="relative cursor-pointer overflow-hidden rounded-[2rem] aspect-video mb-8 shadow-2xl shadow-blue-900/10 transition-all duration-700 hover:shadow-blue-500/20">
+            
+            <img [src]="mainVideo.thumb" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-24 h-16 bg-red-600 rounded-[1.25rem] flex items-center justify-center text-white text-3xl shadow-[0_0_50px_rgba(220,38,38,0.5)] transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-[360deg] overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent"></div>
+                <i class="fa-solid fa-play relative z-10 ml-1"></i>
+              </div>
+            </div>
+
+            <div class="absolute bottom-6 right-6 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-4 py-2 text-xs font-bold rounded-full flex items-center gap-2 group-hover:bg-red-600 transition-colors duration-500">
+               <i class="fa-brands fa-youtube text-lg"></i>
+               <span>Watch on YouTube</span>
+            </div>
+          </div>
+          
+          <h3 class="text-3xl font-bold mb-4 leading-[1.2] group-hover:text-blue-700 transition-colors duration-300">
+            {{mainVideo.title}}
+          </h3>
+          <p class="text-gray-600 text-lg leading-relaxed line-clamp-3">
+            {{mainVideo.desc}}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-gray-200">
+          @for (video of smallVideos; track video.id) {
+            <div class="group/item">
+              <div (click)="openVideo(video.id)" 
+                   class="relative cursor-pointer overflow-hidden rounded-3xl aspect-video mb-5 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <img [src]="video.thumb" class="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110" />
+                
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-16 h-10 bg-red-600 rounded-xl flex items-center justify-center text-white text-xl transition-all duration-300 group-hover/item:scale-110 shadow-lg">
+                    <i class="fa-solid fa-play ml-0.5"></i>
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-bold text-xl mb-3 text-gray-800 leading-tight group-hover/item:text-blue-600 transition-colors">
+                {{video.title}}
+              </h4>
+              <p class="text-gray-500 text-sm leading-relaxed line-clamp-2">
+                {{video.desc}}
+              </p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 lg:sticky lg:top-10 h-fit">
+        <div class="flex items-center justify-between mb-10">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center">
+                <i class="fa-solid fa-microphone-lines text-2xl text-red-600"></i>
+            </div>
+            <span class="text-2xl font-black uppercase tracking-tight text-gray-900">UN Podcasts</span>
+          </div>
+          <a href="#" class="text-blue-600 font-bold text-sm hover:tracking-widest transition-all">SEE ALL</a>
+        </div>
+
+        <div class="bg-white rounded-[2rem] p-6 mb-10 shadow-xl shadow-blue-900/5 border border-gray-50 group hover:border-blue-100 transition-all">
+          <div class="overflow-hidden rounded-2xl mb-6 shadow-md">
+            <img src="Wt.jpg" class="w-full h-52 object-cover transition-transform duration-700 group-hover:scale-110" />
+          </div>
+          
+          <h4 class="font-black text-xl mb-4 text-gray-900 group-hover:text-blue-600 transition-colors">Knowledge in the Age of Disinformation and AI</h4>
+          <p class="text-gray-500 text-sm leading-relaxed mb-8 italic">
+            "What does knowledge mean in an age of AI, deepfakes, and disinformation? Distinguishing insight from noise is the new challenge."
+          </p>
+          
+          <div class="bg-gray-50 rounded-2xl p-3 border border-gray-100">
+             <audio controls class="w-full h-10">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+             </audio>
+          </div>
+
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[2rem] mb-8 shadow-2xl cursor-pointer">
+          <img src="Wt-1.png" class="w-full h-auto transition-transform duration-1000 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent transition-opacity group-hover:opacity-0"></div>
+        </div>
+
+        <button class="group relative w-full h-16 bg-white border-2 border-blue-600 text-blue-600 font-black text-sm rounded-2xl uppercase tracking-widest overflow-hidden transition-all duration-300 hover:text-white">
+            <span class="relative z-10">Latest Audio From UN News</span>
+            <div class="absolute inset-0 bg-linear-to-r from-blue-800 to-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if (isVideoVisible()) {
+    <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#001D4A]/95 backdrop-blur-xl p-4 animate-in fade-in zoom-in duration-500">
+      <button (click)="closeVideo()" class="absolute top-8 right-8 w-14 h-14 bg-white/10 text-white rounded-full flex items-center justify-center text-4xl hover:bg-red-600 hover:rotate-90 transition-all duration-500 shadow-2xl">
+        &times;
+      </button>
+      <div class="w-full max-w-6xl aspect-video rounded-[2.5rem] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/20">
+        <iframe [src]="videoUrl" class="w-full h-full" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  }
+</div>

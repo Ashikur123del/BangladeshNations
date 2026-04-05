@@ -1,0 +1,84 @@
+<section class="bg-slate-50/50 pt-10 pb-4 lg:pt-20 lg:pb-0 overflow-hidden">
+  <div class="container mx-auto px-4">
+    
+    @if (isBrowser()) {
+      <swiper-container 
+        navigation="true" 
+        autoplay-delay="4000"
+        loop="true"
+        class="rounded-[2rem] overflow-hidden"
+      >
+        @for (slide of slides(); track $index) {
+          <swiper-slide>
+            <div class="bg-white/60 rounded-[2rem] shadow  border border-white/20 overflow-hidden"
+                 [class.p-6]="slide.title" 
+                 [class.lg:p-8]="slide.title"
+                 [class.p-0]="!slide.title">
+              
+              @if (slide.title) {
+                <div class="flex flex-col lg:flex-row gap-10 items-center">
+                  <div class="w-full lg:w-3/5 overflow-hidden rounded-2xl shadow-xl">
+                    <img [src]="slide.img" [alt]="slide.title" 
+                        class="w-full h-[350px] lg:h-[550px] object-cover hover:scale-105 transition-transform duration-1000">
+                  </div>
+
+                  <div class="w-full lg:w-2/5 space-y-7">
+                    <div class="flex items-center gap-3">
+                      <span class="bg-blue-900 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">
+                        {{ slide.category }}
+                      </span>
+                    </div>
+                    
+                    <h1 class="text-3xl lg:text-6xl font-black text-slate-900 leading-[1.1] tracking-tighter">
+                      {{ slide.title }}
+                    </h1>
+                    
+                    <p class="text-slate-600 text-base lg:text-lg leading-relaxed font-medium">
+                      {{ slide.desc }}
+                    </p>
+
+                    <div class="relative pl-8 py-4 bg-amber-100/40 rounded-2xl border-l-4 border-amber-500">
+                      <i class="fa-solid fa-quote-left absolute left-3 top-2 text-amber-200 text-2xl"></i>
+                      <p class="text-sm lg:text-md font-bold text-amber-950 italic relative z-10">
+                        {{ slide.fact }}
+                      </p>
+                      <p class="text-[10px] text-slate-400 mt-3 font-black uppercase tracking-widest">
+                        {{ slide.photoCredit }}
+                      </p>
+                    </div>
+
+                    <div class="pt-4">
+                      <button class="bg-linear-to-r from-blue-800 to-blue-600 text-white px-10 py-4 rounded-full font-black text-xs uppercase shadow-2xl shadow-blue-100 flex items-center gap-3 transition-all active:scale-95 group">
+                        Read Full Story 
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              } 
+              
+              @else {
+                <div class="w-full h-full">
+                  <img [src]="slide.img" alt="Banner" 
+                      class="w-full h-[350px] lg:h-[550px] object-cover block shadow-inner">
+                </div>
+              }
+
+            </div>
+          </swiper-slide>
+        } 
+        
+        @empty {
+          <div class="p-20 text-center font-bold text-slate-400 uppercase tracking-widest">
+            No Slides Available
+          </div>
+        }
+      </swiper-container>
+    } @else {
+      <div class="rounded-[2rem] h-[550px] bg-slate-200 animate-pulse flex items-center justify-center">
+        <img src="load.gif" alt="Loading..." class="w-20 opacity-30">
+      </div>
+    }
+
+  </div>
+</section>

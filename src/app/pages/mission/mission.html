@@ -1,0 +1,66 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image: url('M-2.jpg'); background-size: cover; background-position: center;"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-[#001D4A]/90 to-blue-900/80"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">NHCRF Foundation</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Mission <span class="text-blue-400">&amp; Vision</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">Protecting and promoting human rights across Bangladesh through transparency, accountability, and justice.</p>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <!-- Mission -->
+      <div class="bg-slate-50 rounded-3xl p-10 border border-slate-100">
+        <div class="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center mb-8">
+          <i class="fa-solid fa-bullseye text-white text-2xl"></i>
+        </div>
+        <h2 class="text-3xl font-black text-slate-900 mb-4">Our Mission</h2>
+        <div class="h-1 w-12 bg-blue-600 mb-6 rounded-full"></div>
+        <p class="text-slate-600 leading-relaxed text-lg">
+            The National Human Rights Crime Reporters Foundation (NHCRF) is committed to documenting, reporting, and advocating against human rights violations across Bangladesh. We empower citizens by providing legal guidance, raising public awareness, and ensuring that every voice is heard regardless of social status.
+        </p>
+      </div>
+      <!-- Vision -->
+      <div class="bg-blue-900 rounded-3xl p-10">
+        <div class="w-16 h-16 bg-blue-700 rounded-2xl flex items-center justify-center mb-8">
+          <i class="fa-solid fa-eye text-white text-2xl"></i>
+        </div>
+        <h2 class="text-3xl font-black text-white mb-4">Our Vision</h2>
+        <div class="h-1 w-12 bg-blue-400 mb-6 rounded-full"></div>
+        <p class="text-blue-100 leading-relaxed text-lg">
+          A Bangladesh where every citizen enjoys their fundamental rights, where rule of law is supreme, and where justice is accessible to all. We envision a society built on equality, dignity, and the protection of all human rights as enshrined in the UN Universal Declaration of Human Rights.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="mt-20">
+      <h2 class="text-4xl font-black text-slate-900 text-center mb-4">Our Core Values</h2>
+      <div class="h-1 w-16 bg-blue-600 mx-auto mb-16 rounded-full"></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        @for (v of values; track v.title) {
+          <div class="text-center p-8 rounded-2xl border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i [class]="v.icon" class="text-blue-700 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-black text-slate-900 mb-3">{{ v.title }}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{{ v.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image Banner -->
+<section class="py-0">
+  <div class="grid grid-cols-1 md:grid-cols-3 h-64 md:h-80">
+    <div class="overflow-hidden"><img src="M-2.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Mission"></div>
+    <div class="overflow-hidden"><img src="M-4.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Mission"></div>
+    <div class="overflow-hidden"><img src="M1.jpg" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" alt="Mission"></div>
+  </div>
+</section>

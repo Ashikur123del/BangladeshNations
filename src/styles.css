@@ -1,3 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 @import 'tailwindcss';
+
+*{
+    font-family: 'Manrope', sans-serif;
+}
+
+
+
+/* Global Responsive Helpers */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Swiper Navigation Customization */
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  background-color: white;
+  width: 35px; 
+  height: 35px;
+  border-radius: 50%;
+  color: #1e3a8a;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  swiper-container::part(button-prev),
+  swiper-container::part(button-next) {
+    width: 30px;
+    height: 30px;
+    display: none; /* Hide buttons on mobile to save space, rely on touch */
+  }
+  
+  swiper-container::part(pagination) {
+    bottom: 5px !important;
+  }
+}
+
+swiper-container::part(button-prev):hover,
+swiper-container::part(button-next):hover {
+  background-color: #1e3a8a;
+  color: white;
+  transform: scale(1.05);
+}
+
+swiper-container::part(button-prev) {
+  left: 10px;
+}
+swiper-container::part(button-next) {
+  right: 10px;
+}
+
+/* Fade-in Animation for better UX */
+.animate-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+

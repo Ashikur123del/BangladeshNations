@@ -1,0 +1,46 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image: url('Gal-2.jpg'); background-size: cover; background-position: center;"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-blue-950 to-blue-800/80"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">Our Impact</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Our <span class="text-blue-400">Activities</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">Documenting and reporting across the nation to protect human rights and ensure a just society.</p>
+  </div>
+</section>
+
+<!-- Activities Grid -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      @for (activity of activities; track activity.title) {
+        <div class="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+          <div class="aspect-video overflow-hidden">
+            <img [src]="activity.image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" [alt]="activity.title">
+          </div>
+          <div class="p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="bg-blue-900/10 text-blue-900 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">{{ activity.category }}</span>
+              <span class="text-slate-400 text-xs font-bold">{{ activity.date }}</span>
+            </div>
+            <h3 class="text-xl font-black text-slate-900 mb-4 group-hover:text-blue-700 transition-colors uppercase leading-snug">{{ activity.title }}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">{{ activity.desc }}</p>
+            <div class="flex items-center gap-2 text-blue-700 font-bold text-sm">
+              <span>Explore Detail</span>
+              <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="bg-blue-900 py-20">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-black text-white mb-6">Join Our Mission Across Bangladesh</h2>
+    <p class="text-blue-100 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">Become a part of NHCRF and contribute to a more equitable and just society for every citizen.</p>
+    <button class="bg-white text-blue-900 font-black px-12 py-4 rounded-full uppercase tracking-widest text-xs shadow-xl hover:bg-slate-50 transition-all active:scale-95">Become a Member</button>
+  </div>
+</section>

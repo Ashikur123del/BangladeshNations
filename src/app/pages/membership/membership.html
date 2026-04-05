@@ -1,0 +1,100 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-blue-950 to-blue-800/80"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-black  tracking-[0.3em] px-5 py-2 rounded-full mb-6">Join NHCRF Network</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Membership <span class="text-blue-400">Application</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">Join thousands of human rights advocates and reporters across Bangladesh to work towards a just society.</p>
+  </div>
+</section>
+
+<!-- Application Form -->
+<section class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 md:px-6 max-w-4xl">
+    <div class="bg-slate-50 rounded-2xl md:rounded-3xl p-6 md:p-12 border border-slate-100 shadow-sm">
+      <h2 class="text-3xl font-black text-slate-900 mb-2 text-center">Member <span class="text-blue-600 border-b-3 border-blue-600"> Application</span> Form</h2>
+      <p class="text-slate-500 mb-10 border-b border-slate-400 pb-6 text-center">Please provide accurate information as it appears on your National ID (NID).</p>
+
+      <div class=" space-y-6">
+        <!-- Part 1: Personal -->
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-blue-900 text-white rounded-lg flex items-center justify-center font-black text-sm">1</div>
+            <h3 class="text-xl font-black text-slate-800  tracking-wider">Personal Information</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Name in English *</label>
+              <input type="text" placeholder="As per NID" class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Father's Name *</label>
+              <input type="text" placeholder="Father's name" class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Date of Birth *</label>
+              <input type="date" class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Blood Group (Optional)</label>
+              <select class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+                <option value="">Select blood group</option>
+                <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 2: Contact -->
+        <div>
+          <div class="flex items-center gap-3 mb-6 border-t border-slate-400 pt-10">
+            <div class="w-8 h-8 bg-blue-900 text-white rounded-lg flex items-center justify-center font-black text-sm">2</div>
+            <h3 class="text-xl font-black text-slate-800  tracking-wider">Contact & Address</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="text-xs font-black text-slate-500   block mb-2">Mobile Number *</label>
+              <input type="tel" placeholder="+880 1XXX-XXXXXX" class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Working Division *</label>
+              <select class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+                <option value="">Select Division</option>
+                @for (div of divisions; track div) { <option>{{ div }}</option> }
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-xs font-black text-slate-500  block mb-2">Permanent Address *</label>
+              <textarea rows="3" placeholder="Full address including district and upazila" class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all resize-none font-medium text-slate-700"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 3: Professional -->
+        <div>
+          <div class="flex items-center gap-3 mb-6 border-t border-slate-400 pt-10">
+            <div class="w-8 h-8 bg-blue-900 text-white rounded-lg flex items-center justify-center font-black text-sm">3</div>
+            <h3 class="text-xl font-black text-slate-800  tracking-wider">Professional & Purpose</h3>
+          </div>
+          <div class="space-y-6">
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Current Occupation *</label>
+              <input type="text" placeholder="e.g. Journalist, Lawyer, Student" class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all font-medium text-slate-700">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500  block mb-2">Why do you want to join NHCRF? *</label>
+              <textarea rows="4" placeholder="Your motivation and how you can contribute..." class="w-full bg-white border border-slate-400 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all resize-none font-medium text-slate-700"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <button class="w-full bg-blue-900 hover:bg-blue-800 text-white font-black py-5 rounded-2xl  tracking-widest text-sm shadow-xl transition-all active:scale-95 flex items-center justify-center gap-3">
+          <i class="fa-solid fa-file-signature text-lg"></i>
+          Submit Application Form
+        </button>
+        <p class="text-center text-slate-500 text-xs mt-4">By submitting, you agree to comply with NHCRF's ethical code of conduct and reporting guidelines.</p>
+      </div>
+    </div>
+  </div>
+</section>

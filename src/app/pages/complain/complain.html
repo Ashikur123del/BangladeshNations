@@ -1,0 +1,96 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-blue-950 to-red-900/30"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-red-600/20 border border-red-500/30 text-red-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">Report Now</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Human Rights <span class="text-red-400">Complain</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">Report human rights violations confidentially. Every complaint is reviewed by our legal team within 48 hours.</p>
+  </div>
+</section>
+
+<!-- Important Notice -->
+<div class="bg-amber-50 border-l-4 border-amber-500 py-6">
+  <div class="container mx-auto px-6 flex items-start gap-4">
+    <i class="fa-solid fa-triangle-exclamation text-amber-500 text-xl mt-0.5 shrink-0"></i>
+    <div>
+      <p class="font-black text-amber-900 text-sm">Important: All complaints are treated with strict confidentiality. Your personal information will never be shared without your consent.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Complain Form -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <div class="bg-slate-50 rounded-3xl p-10 border border-slate-100">
+      <h2 class="text-3xl font-black text-slate-900 mb-2">Submit Your Complaint</h2>
+      <p class="text-slate-500 mb-10">Fill in all required fields carefully. Attach any supporting documents if available.</p>
+
+      <div class="space-y-6">
+        <!-- Personal Info -->
+        <div>
+          <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">Complainant Information</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Full Name *</label>
+              <input type="text" placeholder="Your full name" class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">National ID / Passport *</label>
+              <input type="text" placeholder="ID number" class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Phone Number *</label>
+              <input type="tel" placeholder="+880 1XXX-XXXXXX" class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Email (Optional)</label>
+              <input type="email" placeholder="your@email.com" class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all">
+            </div>
+          </div>
+        </div>
+
+        <!-- Violation Details -->
+        <div>
+          <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">Violation Details</h3>
+          <div class="space-y-4">
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Type of Violation *</label>
+              <select class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all">
+                <option value="">Select violation type</option>
+                <option>Arbitrary Arrest / Detention</option>
+                <option>Torture or Cruel Treatment</option>
+                <option>Forced Disappearance</option>
+                <option>Discrimination</option>
+                <option>Child Rights Violation</option>
+                <option>Women's Rights Violation</option>
+                <option>Freedom of Expression</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Date of Incident *</label>
+              <input type="date" class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Location of Incident *</label>
+              <input type="text" placeholder="District, Upazila, Village" class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all">
+            </div>
+            <div>
+              <label class="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Describe the Incident *</label>
+              <textarea rows="6" placeholder="Provide a detailed description of the human rights violation..." class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:outline-none focus:border-blue-500 transition-all resize-none"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 bg-blue-50 rounded-xl p-4 border border-blue-100">
+          <input type="checkbox" id="agree" class="w-4 h-4 accent-blue-700">
+          <label for="agree" class="text-sm text-slate-600 font-medium">I confirm that the information provided is accurate and I consent to NHCRF processing this complaint.</label>
+        </div>
+
+        <button class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-xl uppercase tracking-widest text-sm transition-all active:scale-95">
+          <i class="fa-solid fa-flag mr-2"></i> Submit Complaint
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

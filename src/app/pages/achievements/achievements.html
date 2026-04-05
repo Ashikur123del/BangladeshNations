@@ -1,0 +1,56 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-blue-950 to-amber-900/20"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-amber-600/20 border border-amber-500/30 text-amber-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">Our Impact</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Our <span class="text-amber-400">Achievements</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">Milestones and impact we've achieved in defending human rights across Bangladesh since our founding.</p>
+  </div>
+</section>
+
+<!-- Key Stats -->
+<section class="bg-amber-500 py-16">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      @for (s of stats; track s.label) {
+        <div>
+          <div class="text-4xl md:text-5xl font-black text-white mb-2">{{ s.value }}</div>
+          <div class="text-amber-100 text-sm uppercase tracking-widest">{{ s.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black text-slate-900 mb-4">Timeline of Impact</h2>
+      <div class="h-1 w-12 bg-amber-500 mx-auto rounded-full"></div>
+    </div>
+    <div class="relative">
+      <!-- Vertical Line -->
+      <div class="absolute left-4 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-slate-100"></div>
+      
+      @for (item of timeline; track item.year; let i = $index) {
+        <div class="relative flex items-start mb-12 md:mb-16" [class.md:flex-row-reverse]="i % 2 !== 0">
+          <!-- Content Box -->
+          <div class="w-full pl-12 md:pl-0 md:w-1/2" 
+               [class.md:pr-12]="i % 2 === 0" 
+               [class.md:pl-12]="i % 2 !== 0" 
+               [class.md:text-right]="i % 2 === 0">
+            <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group">
+              <span class="inline-block text-xs font-black text-amber-600 uppercase tracking-widest mb-3 px-3 py-1 bg-amber-50 rounded-full group-hover:bg-amber-100 transition-colors">{{ item.year }}</span>
+              <h3 class="text-xl font-black text-slate-900 mb-3 leading-tight">{{ item.title }}</h3>
+              <p class="text-slate-500 text-sm md:text-base leading-relaxed">{{ item.desc }}</p>
+            </div>
+          </div>
+          
+          <!-- Circle Dot -->
+          <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-[6px] border-amber-500 rounded-full shadow-md z-10"></div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10" style="background-image: url('hero-1.jpg'); background-size: cover; background-position: center;"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-[#001D4A]/90 to-blue-900/80"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">Worldwide Perspective</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Global <span class="text-blue-400">Issues</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">From climate change to migration and poverty, we track the most pressing humanitarian issues facing our world today.</p>
+  </div>
+</section>
+
+<!-- Issues Grid -->
+<section class="py-24 bg-slate-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black text-slate-900 mb-4">Key Global Issues</h2>
+      <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (issue of issues; track issue.title) {
+        <div class="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer">
+          <div class="h-2" [class]="issue.color"></div>
+          <div class="p-8">
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" [class]="issue.bgColor">
+              <i [class]="issue.icon" class="text-2xl" [class]="issue.iconColor"></i>
+            </div>
+            <h3 class="text-xl font-black text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">{{ issue.title }}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">{{ issue.desc }}</p>
+            <div class="flex items-center text-blue-600 font-bold text-sm gap-2 group-hover:gap-4 transition-all">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

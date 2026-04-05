@@ -1,0 +1,4 @@
+/* Global issues styles */
+:host {
+  display: block;
+}

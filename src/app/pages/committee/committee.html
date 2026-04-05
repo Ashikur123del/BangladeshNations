@@ -1,0 +1,32 @@
+<!-- Hero -->
+<section class="bg-[#001D4A] py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-[#001D4A] via-blue-950 to-blue-800/50"></div>
+  <div class="container mx-auto px-6 relative z-10 text-center">
+    <span class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-6">Leadership</span>
+    <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tighter">Divisional <span class="text-blue-400">Committee</span></h1>
+    <p class="text-slate-300 text-lg max-w-2xl mx-auto leading-relaxed">Our dedicated divisional leaders guide NHCRF's work across Bangladesh with expertise and commitment.</p>
+  </div>
+</section>
+
+<!-- Central Committee -->
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black text-slate-900 mb-4">Central Committee</h2>
+      <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full mb-6"></div>
+      <p class="text-slate-500 max-w-xl mx-auto">The central committee oversees national strategy, policy direction, and coordination across all divisions.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (m of central; track m.name) {
+        <div class="group bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 text-center">
+          <div class="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-black">
+            {{ m.name[0] }}
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-1">{{ m.name }}</h3>
+          <p class="text-blue-600 font-bold text-sm uppercase tracking-widest mb-4">{{ m.role }}</p>
+          <p class="text-slate-500 text-sm leading-relaxed">{{ m.division }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
