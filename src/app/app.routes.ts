@@ -12,7 +12,7 @@ import { ActivitiesPage } from './pages/activities/activities';
 import { MembershipPage } from './pages/membership/membership';
 
 export const routes: Routes = [
-  { path: '', component: Home, pathMatch: 'full' },
+  { path: '/', component: Home, pathMatch: 'full' },
   { path: 'gallery', component: Photogallery },
   { path: 'mission', component: MissionPage },
   { path: 'contact', component: ContactPage },
