@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-global-page',
   standalone: true,
-  imports: [],
+  imports: [], // CommonModule বাদ দেওয়া হয়েছে
   templateUrl: './global.html',
   styleUrls: ['./global.css']
 })
-export class GlobalPage {
+export class GlobalPage { 
   issues = [
     {
       title: 'Climate Change',
@@ -56,6 +56,6 @@ export class GlobalPage {
       color: 'bg-purple-600',
       bgColor: 'bg-purple-50',
       iconColor: 'text-purple-700'
-    },
+    }
   ];
 }
